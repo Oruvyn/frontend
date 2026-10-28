@@ -22,6 +22,10 @@ const styles = {
       --animated-ease-in-duration: calc(var(--t-animation-duration-slow) * 1s);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+
     @keyframes animated-ease-in-animatedEaseInFadeIn {
       from {
         opacity: 0;

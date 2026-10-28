@@ -54,9 +54,11 @@ type StyledItemProps = Pick<
 const StyledItem = styled.button<StyledItemProps>`
   align-items: center;
   background: ${({ active, variant }) =>
-    active || variant === 'placeholder'
-      ? themeCssVariables.background.transparent.light
-      : 'transparent'};
+    active
+      ? themeCssVariables.accent.tertiary
+      : variant === 'placeholder'
+        ? themeCssVariables.background.transparent.light
+        : 'transparent'};
   border: ${({ isSelectedInEditMode }) =>
     isSelectedInEditMode
       ? `1px solid ${themeCssVariables.color.blue}`
@@ -71,7 +73,7 @@ const StyledItem = styled.button<StyledItemProps>`
       return themeCssVariables.font.color.tertiary;
     }
     if (active === true) {
-      return themeCssVariables.font.color.primary;
+      return themeCssVariables.accent.accent11;
     }
     if (isSoon) {
       return themeCssVariables.font.color.light;
@@ -118,7 +120,7 @@ const StyledItem = styled.button<StyledItemProps>`
   }
 
   &:has(.navigation-drawer-item-label:focus-visible) {
-    outline: 2px solid ${themeCssVariables.color.blue};
+    outline: 2px solid ${themeCssVariables.accent.accent9};
     outline-offset: -2px;
   }
 

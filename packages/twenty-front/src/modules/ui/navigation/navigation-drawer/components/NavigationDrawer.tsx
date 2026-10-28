@@ -46,6 +46,10 @@ const StyledAnimatedContainer = styled.div<{
       ? `var(${NAVIGATION_DRAWER_WIDTH_VAR})`
       : `${NAVIGATION_DRAWER_COLLAPSED_WIDTH}px`};
 
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   @media (max-width: ${MOBILE_VIEWPORT}px) {
     width: ${({ isExpanded }) =>
       isExpanded ? 'calc(100vw / var(--t-zoom, 1))' : '0'};
@@ -55,6 +59,8 @@ const StyledAnimatedContainer = styled.div<{
 const StyledContainer = styled.div<{
   isExpanded?: boolean;
 }>`
+  background: ${themeCssVariables.background.secondary};
+  border-right: 1px solid ${themeCssVariables.border.color.medium};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
