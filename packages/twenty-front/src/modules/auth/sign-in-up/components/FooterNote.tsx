@@ -1,29 +1,9 @@
-import { styled } from '@linaria/react';
-import { Trans, useLingui } from '@lingui/react/macro';
-
 import { useWorkspaceBypass } from '@/auth/sign-in-up/hooks/useWorkspaceBypass';
-import { getTwentyWebsiteUrl } from '@/auth/utils/getTwentyWebsiteUrl';
+import { ORUVYN_SOURCE_LICENSE_URL } from '@/branding/constants/OruvynSource';
 import { useIsCurrentLocationOnAWorkspace } from '@/domain-manager/hooks/useIsCurrentLocationOnAWorkspace';
-import { ONBOARDING_CONTENT_BLOCK_WIDTH } from '@/onboarding/constants/OnboardingContentBlockWidth';
+import { styled } from '@linaria/react';
+import { Trans } from '@lingui/react/macro';
 import { themeCssVariables } from 'twenty-ui/theme';
-
-const StyledCopyContainer = styled.div`
-  align-items: center;
-  color: ${themeCssVariables.font.color.tertiary};
-  font-size: ${themeCssVariables.font.size.sm};
-  line-height: 1.4;
-  max-width: ${ONBOARDING_CONTENT_BLOCK_WIDTH}px;
-  text-align: center;
-
-  & > a {
-    color: ${themeCssVariables.font.color.tertiary};
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
 
 const StyledLinksContainer = styled.div`
   align-items: center;
@@ -59,38 +39,12 @@ const StyledSeparator = styled.span`
 
 export const FooterNote = () => {
   const { isOnAWorkspace } = useIsCurrentLocationOnAWorkspace();
-  const { i18n } = useLingui();
-
   const { shouldOfferBypass, shouldUseBypass, enableBypass } =
     useWorkspaceBypass();
 
-  if (!isOnAWorkspace) {
-    return (
-      <StyledCopyContainer>
-        <Trans>Built on Twenty. Upstream policies:</Trans>{' '}
-        <a
-          href={getTwentyWebsiteUrl(i18n.locale, 'terms')}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Trans>Twenty Terms of Service</Trans>
-        </a>{' '}
-        <Trans>and</Trans>{' '}
-        <a
-          href={getTwentyWebsiteUrl(i18n.locale, 'privacy-policy')}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Trans>Twenty Privacy Policy</Trans>
-        </a>
-        .
-      </StyledCopyContainer>
-    );
-  }
-
   return (
     <StyledLinksContainer>
-      {shouldOfferBypass && !shouldUseBypass && (
+      {isOnAWorkspace && shouldOfferBypass && !shouldUseBypass && (
         <>
           <button type="button" onClick={enableBypass}>
             <Trans>Bypass SSO</Trans>
@@ -99,19 +53,11 @@ export const FooterNote = () => {
         </>
       )}
       <a
-        href={getTwentyWebsiteUrl(i18n.locale, 'privacy-policy')}
+        href={ORUVYN_SOURCE_LICENSE_URL}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Trans>Twenty Privacy Policy</Trans>
-      </a>
-      <StyledSeparator>•</StyledSeparator>
-      <a
-        href={getTwentyWebsiteUrl(i18n.locale, 'terms')}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Trans>Twenty Terms of Service</Trans>
+        <Trans>Open-source licenses</Trans>
       </a>
     </StyledLinksContainer>
   );

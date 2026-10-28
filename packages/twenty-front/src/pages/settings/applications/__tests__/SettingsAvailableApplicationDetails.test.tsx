@@ -147,7 +147,7 @@ const renderPage = (availableApplicationId: string) =>
   );
 
 const NOT_VETTED_WARNING =
-  'This application is not vetted by Twenty. Use at your own risk.';
+  'This application is not vetted by Oruvyn. Use at your own risk.';
 
 describe('SettingsAvailableApplicationDetails', () => {
   beforeEach(() => {
@@ -164,10 +164,10 @@ describe('SettingsAvailableApplicationDetails', () => {
 
     expect(screen.queryByText(NOT_VETTED_WARNING)).not.toBeInTheDocument();
     expect(
-      screen.getByText('The base data model every Twenty workspace runs on.'),
+      screen.getByText('The base data model every Oruvyn workspace runs on.'),
     ).toBeInTheDocument();
     expect(screen.getByTestId('markdown-renderer')).toHaveTextContent(
-      'Every Twenty workspace starts with this app.',
+      'Every Oruvyn workspace starts with this app.',
     );
   });
 

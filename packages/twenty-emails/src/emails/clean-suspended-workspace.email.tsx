@@ -42,12 +42,12 @@ export const CleanSuspendedWorkspaceEmail = ({
         <Trans id="Its data has been removed and can no longer be recovered." />
         <br />
         <br />
-        <Trans id="If you'd ever like to give Twenty another try, you can start a fresh workspace in minutes — we'd love to have you back." />
+        <Trans id="You can explore Oruvyn and follow development on GitHub." />
       </MainText>
       <br />
       <CallToAction
-        href="https://app.twenty.com/"
-        value={i18n._('Start a new workspace')}
+        href="https://github.com/Oruvyn/frontend"
+        value={i18n._('Explore Oruvyn')}
       />
       <br />
       <br />

@@ -112,7 +112,7 @@ export const AuthSplitLayout = ({ children }: AuthSplitLayoutProps) => (
         </p>
       </StyledMessage>
       <StyledSignature>
-        <Trans>Built on Twenty. Shaped for Oruvyn.</Trans>
+        <Trans>Clarity for every connection.</Trans>
       </StyledSignature>
     </StyledIdentity>
     <StyledForm>{children}</StyledForm>

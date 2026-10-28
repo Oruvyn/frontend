@@ -1,7 +1,14 @@
 import { type I18n } from '@lingui/core';
-import { Img } from 'react-email';
+import { Text } from 'react-email';
+import { canvasTheme } from 'src/common-style';
 
 const logoStyle = {
+  color: '#111C31',
+  fontFamily: canvasTheme.font.family,
+  fontSize: '28px',
+  fontWeight: 600,
+  letterSpacing: '-1px',
+  lineHeight: '36px',
   marginBottom: '40px',
 };
 
@@ -10,13 +17,5 @@ type LogoProps = {
 };
 
 export const Logo = ({ i18n }: LogoProps) => {
-  return (
-    <Img
-      src="https://app.twenty.com/images/icons/windows11/Square150x150Logo.scale-100.png"
-      alt={i18n._('Twenty logo')}
-      width="40"
-      height="40"
-      style={logoStyle}
-    />
-  );
+  return <Text style={logoStyle}>{i18n._('Oruvyn')}</Text>;
 };

@@ -1,5 +1,7 @@
 # Oruvyn foundation — implementation and validation
 
+The subsequent customer-facing branding cleanup is recorded in [BRANDING_CLEANUP.md](BRANDING_CLEANUP.md).
+
 ## Delivered
 
 The starting checkout was an empty Oruvyn repository, not Twenty. The feature branch imports upstream revision `5053a46ba9e18486c1dc14ee4f772b32fe29dbd4` as a separate baseline and preserves upstream licenses, Enterprise markers, technical identifiers, and trademark policy. The original Oruvyn MIT notice is retained as provenance, not applied to upstream code.
@@ -11,7 +13,7 @@ The frontend foundation now includes:
 - Branded collapsible navigation with workspace identity, existing search/profile controls, selected-state styling, keyboard focus, and reduced-motion handling.
 - A global Create dropdown listing only real, readable, creatable objects. It calls the existing record-creation hook, retaining form feature flags, permissions, RLS inputs, record opening, mutations, and error toasts.
 - Responsive split authentication presentation, workspace-logo preservation, semantic form headings, sign-in/invitation identity, and password-reset composition. Existing SSO, 2FA, captcha, validation, and invitation state transitions remain intact.
-- Clearly labeled upstream policy links rather than claiming that Twenty's policies are Oruvyn's operator policies.
+- A source-license link that preserves access to legal notices without advertising upstream operator policies.
 - Focused native Storybook previews of actual components, plus a development/audit/brand runbook and Codespaces port labels.
 
 ## Verification evidence

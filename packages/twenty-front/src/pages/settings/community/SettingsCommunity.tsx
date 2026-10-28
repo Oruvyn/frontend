@@ -1,25 +1,17 @@
+import { OruvynLogo } from '@/branding/components/OruvynLogo';
 import { SettingsCard } from '@/settings/components/SettingsCard';
-import { SettingsDiscoveryHeroCard } from '@/settings/components/SettingsDiscoveryHeroCard';
 import { SettingsPageContainer } from '@/settings/components/SettingsPageContainer';
-import { SettingsLabContent } from '@/settings/lab/components/SettingsLabContent';
 import { SettingsPageLayout } from '@/settings/components/layout/SettingsPageLayout';
+import { SettingsLabContent } from '@/settings/lab/components/SettingsLabContent';
 import { styled } from '@linaria/react';
 import { t } from '@lingui/core/macro';
-import { Section } from 'twenty-ui/components/layout';
-import {
-  IconBrandX,
-  IconBriefcase,
-  IconTransform,
-  type IconComponent,
-  useIcons,
-} from 'twenty-ui/icon';
+import { Trans } from '@lingui/react/macro';
 import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
-import { MOBILE_VIEWPORT, useTheme, themeCssVariables } from 'twenty-ui/theme';
-import coverDark from '~/pages/settings/community/assets/cover-dark.png';
-import coverLight from '~/pages/settings/community/assets/cover-light.png';
-
-const SETTINGS_COMMUNITY_HERO_INSTANCE_ID_PREFIX = 'settings-community-hero';
+import { Section } from 'twenty-ui/components/layout';
+import { IconBrandGithub } from 'twenty-ui/icon';
+import { Card } from 'twenty-ui/primitives/surfaces';
+import { MOBILE_VIEWPORT, themeCssVariables, useTheme } from 'twenty-ui/theme';
 
 const StyledCardsGrid = styled.div`
   display: grid;
@@ -31,37 +23,23 @@ const StyledCardsGrid = styled.div`
   }
 `;
 
-const StyledFeaturesContent = styled.div`
-  display: grid;
-  gap: ${themeCssVariables.spacing[4]};
+const StyledIdentity = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: ${themeCssVariables.spacing[6]};
+  padding: ${themeCssVariables.spacing[8]};
 `;
 
-type SettingsCommunityLink = {
-  href: string;
-  Icon: IconComponent;
-  iconColor: string;
-  cardTitle: string;
-};
+const StyledTagline = styled.p`
+  color: ${themeCssVariables.font.color.secondary};
+  font-size: ${themeCssVariables.font.size.lg};
+  line-height: 1.5;
+  margin: 0;
+`;
 
 export const SettingsCommunity = () => {
   const theme = useTheme();
-  const { getIcon } = useIcons();
-  const IconBrandDiscord = getIcon('IconBrandDiscord');
-
-  const socialLinks: SettingsCommunityLink[] = [
-    {
-      href: 'https://discord.com/invite/cx5n4Jzs57',
-      Icon: IconBrandDiscord,
-      iconColor: themeCssVariables.color.blue9,
-      cardTitle: t`Join our Discord`,
-    },
-    {
-      href: 'https://x.com/twentycrm',
-      Icon: IconBrandX,
-      iconColor: themeCssVariables.font.color.primary,
-      cardTitle: t`Follow us on X`,
-    },
-  ];
 
   return (
     <SettingsPageLayout
@@ -76,52 +54,43 @@ export const SettingsCommunity = () => {
     >
       <SettingsPageContainer>
         <Section.Root>
-          <SettingsDiscoveryHeroCard
-            lightSrc={coverLight}
-            darkSrc={coverDark}
-            instanceIdPrefix={SETTINGS_COMMUNITY_HERO_INSTANCE_ID_PREFIX}
-            tabs={[]}
-          />
+          <Card.Root>
+            <StyledIdentity>
+              <OruvynLogo size={40} />
+              <StyledTagline>
+                <Trans>Every relationship, in motion.</Trans>
+              </StyledTagline>
+            </StyledIdentity>
+          </Card.Root>
         </Section.Root>
 
         <Section.Root>
           <Section.Header
-            title={t`Join the community`}
-            description={t`Stay up to date with product news and community updates.`}
+            title={t`Connect with Oruvyn`}
+            description={t`Explore the project and follow development on GitHub.`}
           />
           <StyledCardsGrid>
-            {socialLinks.map(({ href, Icon, iconColor, cardTitle }) => (
-              <SettingsCard
-                key={href}
-                href={href}
-                Icon={
-                  <Icon
-                    size={theme.icon.size.md}
-                    stroke={theme.icon.stroke.sm}
-                  />
-                }
-                iconColor={iconColor}
-                title={cardTitle}
-              />
-            ))}
+            <SettingsCard
+              href="https://github.com/Oruvyn"
+              Icon={
+                <IconBrandGithub
+                  size={theme.icon.size.md}
+                  stroke={theme.icon.stroke.sm}
+                />
+              }
+              title={t`Oruvyn on GitHub`}
+            />
+            <SettingsCard
+              href="https://github.com/Oruvyn/frontend"
+              Icon={
+                <IconBrandGithub
+                  size={theme.icon.size.md}
+                  stroke={theme.icon.stroke.sm}
+                />
+              }
+              title={t`View source code`}
+            />
           </StyledCardsGrid>
-        </Section.Root>
-
-        <Section.Root>
-          <Section.Header
-            title={t`Partners`}
-            description={t`Hire a partner to help you implement and customize Twenty.`}
-          />
-          <SettingsCard
-            href="https://twenty.com/partners/list"
-            Icon={
-              <IconBriefcase
-                size={theme.icon.size.md}
-                stroke={theme.icon.stroke.sm}
-              />
-            }
-            title={t`Browse partners`}
-          />
         </Section.Root>
 
         <Section.Root>
@@ -129,19 +98,7 @@ export const SettingsCommunity = () => {
             title={t`Features`}
             description={t`Try our upcoming features. Note they are still in beta. Please bear with us and report any issues you find.`}
           />
-          <StyledFeaturesContent>
-            <SettingsLabContent />
-            <SettingsCard
-              href="https://twenty.com/releases"
-              Icon={
-                <IconTransform
-                  size={theme.icon.size.md}
-                  stroke={theme.icon.stroke.sm}
-                />
-              }
-              title={t`Read changelog`}
-            />
-          </StyledFeaturesContent>
+          <SettingsLabContent />
         </Section.Root>
       </SettingsPageContainer>
     </SettingsPageLayout>

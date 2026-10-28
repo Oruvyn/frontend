@@ -32,7 +32,7 @@ import {
 import isEmpty from 'lodash.isempty';
 import { getGenericOperationName, isDefined } from 'twenty-shared/utils';
 
-const logger = loggerLink(() => 'Twenty');
+const logger = loggerLink(() => 'Oruvyn');
 
 export interface Options {
   uri: string;
