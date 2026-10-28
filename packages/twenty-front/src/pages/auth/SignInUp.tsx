@@ -122,13 +122,13 @@ export const SignInUp = () => {
     }
 
     if (isGlobalScope) {
-      return t`Welcome to Twenty`;
+      return t`Welcome back to Oruvyn.`;
     }
 
     const workspaceName = workspacePublicData?.displayName;
 
     if (!workspaceName) {
-      return t`Welcome to your workspace`;
+      return t`Welcome back to Oruvyn.`;
     }
 
     return t`Welcome, ${workspaceName}.`;
