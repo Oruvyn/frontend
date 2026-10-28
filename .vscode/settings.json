@@ -44,9 +44,7 @@
     "md",
     "mdx"
   ],
-  "cSpell.words": [
-    "twentyhq"
-  ],
+  "cSpell.words": ["twentyhq"],
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "search.exclude": {
     "**/.yarn": true
@@ -54,5 +52,23 @@
   "oxc.lint.enable": true,
   "jestrunner.codeLensSelector": "**/*.{test,spec,integration-spec}.{js,jsx,ts,tsx}",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.experimental.useTsgo": false
+  "typescript.experimental.useTsgo": false,
+  "remote.portsAttributes": {
+    "3001": {
+      "label": "Oruvyn CRM frontend",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "Twenty CRM API",
+      "onAutoForward": "silent"
+    },
+    "6006": {
+      "label": "Oruvyn frontend Storybook",
+      "onAutoForward": "notify"
+    },
+    "6008": {
+      "label": "Oruvyn shared UI Storybook",
+      "onAutoForward": "notify"
+    }
+  }
 }

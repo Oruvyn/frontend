@@ -162,6 +162,13 @@
           "env": {
             "STORYBOOK_SCOPE": "performance"
           }
+        },
+        "oruvyn": {
+          "env": {
+            "STORYBOOK_SCOPE": "oruvyn",
+            "NODE_OPTIONS": "--max_old_space_size=4096"
+          },
+          "configDir": "packages/twenty-front/.storybook/oruvyn"
         }
       }
     },
@@ -189,6 +196,12 @@
           "env": {
             "STORYBOOK_SCOPE": "performance"
           }
+        },
+        "oruvyn": {
+          "env": {
+            "STORYBOOK_SCOPE": "oruvyn"
+          },
+          "configDir": "packages/twenty-front/.storybook/oruvyn"
         }
       }
     },
