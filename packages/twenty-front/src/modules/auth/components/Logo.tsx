@@ -1,3 +1,5 @@
+import { OruvynLogo } from '@/branding/components/OruvynLogo';
+import { doNotTranslate } from 'twenty-shared/i18n';
 import { UndecoratedLink } from '@/ui/navigation/link/components/UndecoratedLink/UndecoratedLink';
 import { getWorkspaceAvatarColorSeed } from '@/workspace/utils/getWorkspaceAvatarColorSeed';
 import { styled } from '@linaria/react';
@@ -22,8 +24,9 @@ const StyledContainer = styled.div`
   margin-bottom: ${themeCssVariables.spacing[4]};
   margin-top: ${themeCssVariables.spacing[4]};
 
+  min-width: ${themeCssVariables.spacing[12]};
   position: relative;
-  width: ${themeCssVariables.spacing[12]};
+  width: auto;
 `;
 
 const StyledSecondaryLogo = styled.img`
@@ -60,7 +63,7 @@ export const Logo = ({
   to = AppPath.SignInUp,
 }: LogoProps) => {
   const { redirectToDefaultDomain } = useRedirectToDefaultDomain();
-  const defaultPrimaryLogoUrl = `${window.location.origin}/images/icons/android/android-launchericon-192-192.png`;
+  const defaultPrimaryLogoUrl = `${window.location.origin}/images/oruvyn/symbol.svg`;
 
   const primaryLogoUrl = getImageAbsoluteURI({
     imageUrl: primaryLogo ?? defaultPrimaryLogoUrl,
@@ -79,19 +82,23 @@ export const Logo = ({
   return (
     <StyledContainer onClick={() => onClick?.()}>
       {isUsingDefaultLogo ? (
-        <UndecoratedLink to={to} onClick={() => redirectToDefaultDomain()}>
-          <StyledPrimaryLogo
-            style={{ backgroundImage: `url(${primaryLogoUrl})` }}
-          />
+        <UndecoratedLink
+          to={to}
+          aria-label={doNotTranslate('Oruvyn')}
+          onClick={() => redirectToDefaultDomain()}
+        >
+          <OruvynLogo size={48} />
         </UndecoratedLink>
       ) : (
         <StyledPrimaryLogo
-          style={{ backgroundImage: `url(${primaryLogoUrl})` }}
+          style={{ backgroundImage: `url(${primaryLogoUrl})`, width: 48 }}
+          role="img"
+          aria-label={placeholder ?? doNotTranslate('Workspace')}
         />
       )}
       {isDefined(secondaryLogoUrl) ? (
         <StyledSecondaryLogoContainer>
-          <StyledSecondaryLogo src={secondaryLogoUrl} />
+          <StyledSecondaryLogo src={secondaryLogoUrl} alt={placeholder ?? ''} />
         </StyledSecondaryLogoContainer>
       ) : (
         isDefined(placeholder) && (

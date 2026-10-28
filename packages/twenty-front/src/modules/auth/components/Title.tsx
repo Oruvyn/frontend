@@ -8,11 +8,13 @@ type TitleProps = React.PropsWithChildren & {
   noMarginTop?: boolean;
 };
 
-const StyledTitle = styled.div<Pick<TitleProps, 'noMarginTop'>>`
+const StyledTitle = styled.h1<Pick<TitleProps, 'noMarginTop'>>`
   color: ${themeCssVariables.font.color.primary};
   font-size: ${themeCssVariables.font.size.xl};
   font-weight: ${themeCssVariables.font.weight.semiBold};
   margin-bottom: ${themeCssVariables.spacing[4]};
+  margin-left: 0;
+  margin-right: 0;
   margin-top: ${({ noMarginTop }) =>
     !noMarginTop ? themeCssVariables.spacing[4] : '0'};
   text-align: center;
