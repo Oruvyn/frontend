@@ -15,7 +15,9 @@ export const PageTitle = (props: PageTitleProps) => {
 
   return (
     <Helmet>
-      <title>{props.title}</title>
+      <title>
+        {props.title === 'Oruvyn CRM' ? props.title : `${props.title} · Oruvyn`}
+      </title>
     </Helmet>
   );
 };
