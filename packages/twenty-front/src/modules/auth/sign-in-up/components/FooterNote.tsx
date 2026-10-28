@@ -29,13 +29,13 @@ const StyledLinksContainer = styled.div`
   align-items: center;
   color: ${themeCssVariables.font.color.tertiary};
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   font-size: ${themeCssVariables.font.size.sm};
   gap: ${themeCssVariables.spacing[2]};
   justify-content: center;
   max-width: 100%;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
 
   & > a,
   & > button {
@@ -67,13 +67,13 @@ export const FooterNote = () => {
   if (!isOnAWorkspace) {
     return (
       <StyledCopyContainer>
-        <Trans>By using Twenty, you agree to the</Trans>{' '}
+        <Trans>Built on Twenty. Upstream policies:</Trans>{' '}
         <a
           href={getTwentyWebsiteUrl(i18n.locale, 'terms')}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Trans>Terms of Service</Trans>
+          <Trans>Twenty Terms of Service</Trans>
         </a>{' '}
         <Trans>and</Trans>{' '}
         <a
@@ -81,7 +81,7 @@ export const FooterNote = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Trans>Privacy Policy</Trans>
+          <Trans>Twenty Privacy Policy</Trans>
         </a>
         .
       </StyledCopyContainer>
@@ -103,7 +103,7 @@ export const FooterNote = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Trans>Privacy Policy</Trans>
+        <Trans>Twenty Privacy Policy</Trans>
       </a>
       <StyledSeparator>•</StyledSeparator>
       <a
@@ -111,7 +111,7 @@ export const FooterNote = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Trans>Terms of Service</Trans>
+        <Trans>Twenty Terms of Service</Trans>
       </a>
     </StyledLinksContainer>
   );
