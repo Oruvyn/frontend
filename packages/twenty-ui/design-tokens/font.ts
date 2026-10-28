@@ -5,7 +5,7 @@ export const FONT_TOKENS = {
   color: {
     primary: GRAY_SCALE_TOKENS.gray12,
     secondary: GRAY_SCALE_TOKENS.gray11,
-    tertiary: GRAY_SCALE_TOKENS.gray9,
+    tertiary: GRAY_SCALE_TOKENS.gray10,
     light: GRAY_SCALE_TOKENS.gray8,
     extraLight: GRAY_SCALE_TOKENS.gray7,
     inverted: GRAY_SCALE_TOKENS.gray1,
@@ -26,5 +26,7 @@ export const FONT_TOKENS = {
     medium: token('500', { unit: 'number' }),
     semiBold: token('600', { unit: 'number' }),
   },
-  family: token('Inter, sans-serif'),
+  family: token(
+    'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  ),
 };

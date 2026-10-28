@@ -2,14 +2,14 @@ import { COLOR_TOKENS } from './color';
 import { GRAY_SCALE_TOKENS } from './grayScale';
 import { token } from './token';
 
-const SM_RADIUS = token('4px');
+const SM_RADIUS = token('6px');
 const MD_RADIUS = token('8px');
 
 export const BORDER_TOKENS = {
   color: {
     strong: GRAY_SCALE_TOKENS.gray6,
-    medium: GRAY_SCALE_TOKENS.gray5,
-    light: GRAY_SCALE_TOKENS.gray4,
+    medium: GRAY_SCALE_TOKENS.gray4,
+    light: GRAY_SCALE_TOKENS.gray3,
     secondaryInverted: GRAY_SCALE_TOKENS.gray11,
     inverted: GRAY_SCALE_TOKENS.gray12,
     danger: COLOR_TOKENS.red5,
