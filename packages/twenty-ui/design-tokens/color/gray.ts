@@ -2,54 +2,18 @@ import { token } from '../token';
 
 export const GRAY_COLOR_TOKENS = {
   scale: {
-    gray1: token({
-      light: 'color(display-p3 1 1 1)',
-      dark: 'color(display-p3 0.09 0.09 0.09)',
-    }),
-    gray2: token({
-      light: 'color(display-p3 0.988 0.988 0.988)',
-      dark: 'color(display-p3 0.106 0.106 0.106)',
-    }),
-    gray3: token({
-      light: 'color(display-p3 0.976 0.976 0.976)',
-      dark: 'color(display-p3 0.098 0.098 0.098)',
-    }),
-    gray4: token({
-      light: 'color(display-p3 0.945 0.945 0.945)',
-      dark: 'color(display-p3 0.114 0.114 0.114)',
-    }),
-    gray5: token({
-      light: 'color(display-p3 0.922 0.922 0.922)',
-      dark: 'color(display-p3 0.133 0.133 0.133)',
-    }),
-    gray6: token({
-      light: 'color(display-p3 0.839 0.839 0.839)',
-      dark: 'color(display-p3 0.282 0.282 0.282)',
-    }),
-    gray7: token({
-      light: 'color(display-p3 0.8 0.8 0.8)',
-      dark: 'color(display-p3 0.298 0.298 0.298)',
-    }),
-    gray8: token({
-      light: 'color(display-p3 0.702 0.702 0.702)',
-      dark: 'color(display-p3 0.4 0.4 0.4)',
-    }),
-    gray9: token({
-      light: 'color(display-p3 0.6 0.6 0.6)',
-      dark: 'color(display-p3 0.506 0.506 0.506)',
-    }),
-    gray10: token({
-      light: 'color(display-p3 0.514 0.514 0.514)',
-      dark: 'color(display-p3 0.482 0.482 0.482)',
-    }),
-    gray11: token({
-      light: 'color(display-p3 0.4 0.4 0.4)',
-      dark: 'color(display-p3 0.702 0.702 0.702)',
-    }),
-    gray12: token({
-      light: 'color(display-p3 0.2 0.2 0.2)',
-      dark: 'color(display-p3 0.922 0.922 0.922)',
-    }),
+    gray1: token({ light: '#FFFFFF', dark: '#111C31' }),
+    gray2: token({ light: '#F7F9FC', dark: '#0D1627' }),
+    gray3: token({ light: '#F0F4F8', dark: '#162238' }),
+    gray4: token({ light: '#E5EAF1', dark: '#1C2B43' }),
+    gray5: token({ light: '#DAE2EC', dark: '#263750' }),
+    gray6: token({ light: '#C5D0DE', dark: '#354963' }),
+    gray7: token({ light: '#AFBDCF', dark: '#47607A' }),
+    gray8: token({ light: '#93A2B8', dark: '#607891' }),
+    gray9: token({ light: '#758096', dark: '#8699B0' }),
+    gray10: token({ light: '#647188', dark: '#97A9BF' }),
+    gray11: token({ light: '#4E5D73', dark: '#BAC8DA' }),
+    gray12: token({ light: '#18243A', dark: '#EDF3FA' }),
   },
   transparent: {
     gray1: token({
