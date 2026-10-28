@@ -1,6 +1,14 @@
 // Generated from design-tokens by scripts/generateThemeTokens.ts.
 // Do not edit manually. Regenerate with: npx nx generateTokens twenty-ui.
 export const themeCssVariables = {
+  brand: {
+    navy: 'var(--t-brand-navy)',
+    teal: 'var(--t-brand-teal)',
+    mint: 'var(--t-brand-mint)',
+    white: 'var(--t-brand-white)',
+    onNavyMuted: 'var(--t-brand-on-navy-muted)',
+    onNavyBorder: 'var(--t-brand-on-navy-border)',
+  },
   icon: {
     size: {
       sm: 'var(--t-icon-size-sm)',

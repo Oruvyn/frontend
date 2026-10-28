@@ -2,6 +2,7 @@ import { ACCENT_TOKENS } from './accent';
 import { ANIMATION_TOKENS } from './animation';
 import { BACKGROUND_TOKENS } from './background';
 import { BLUR_TOKENS } from './blur';
+import { BRAND_TOKENS } from './brand';
 import { BORDER_TOKENS } from './border';
 import { BOX_SHADOW_TOKENS } from './boxShadow';
 import { BUTTONS_TOKENS } from './buttons';
@@ -22,6 +23,7 @@ import { TOOLTIP_TOKENS } from './tooltip';
 import { type DesignTokenNode } from './types/DesignTokenNode';
 
 export const DESIGN_TOKENS: DesignTokenNode = {
+  brand: BRAND_TOKENS,
   icon: ICON_TOKENS,
   modal: MODAL_TOKENS,
   text: TEXT_TOKENS,

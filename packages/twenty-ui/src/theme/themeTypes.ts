@@ -1,6 +1,14 @@
 // Generated from design-tokens by scripts/generateThemeTokens.ts.
 // Do not edit manually. Regenerate with: npx nx generateTokens twenty-ui.
 export type ThemeType = {
+  brand: {
+    navy: string;
+    teal: string;
+    mint: string;
+    white: string;
+    onNavyMuted: string;
+    onNavyBorder: string;
+  };
   icon: {
     size: {
       sm: number;
