@@ -1,3 +1,5 @@
+import { OruvynCreateRecordButton } from '@/navigation/components/OruvynCreateRecordButton';
+import { OruvynLogo } from '@/branding/components/OruvynLogo';
 import { FrontComponentMediaSessionIndicator } from '@/front-components/media-session/components/FrontComponentMediaSessionIndicator';
 import { APP_HEADER_HEIGHT } from '@/ui/layout/constants/AppHeaderHeight';
 import { styled } from '@linaria/react';
@@ -15,6 +17,15 @@ import { NavigationDrawerCollapseButton } from '@/ui/navigation/navigation-drawe
 const StyledContainer = styled.div`
   flex-shrink: 0;
   user-select: none;
+`;
+
+const StyledBrandRow = styled.div<{ isExpanded: boolean }>`
+  align-items: center;
+  display: flex;
+  justify-content: ${({ isExpanded }) => (isExpanded ? 'flex-start' : 'center')};
+  min-height: ${themeCssVariables.spacing[16]};
+  padding: 0
+    ${({ isExpanded }) => (isExpanded ? themeCssVariables.spacing[3] : '0')};
 `;
 
 const StyledHeaderRow = styled.div`
@@ -71,6 +82,9 @@ export const NavigationDrawerHeader = () => {
 
   return (
     <StyledContainer>
+      <StyledBrandRow isExpanded={isExpanded}>
+        <OruvynLogo compact={!isExpanded} size={isExpanded ? 32 : 28} />
+      </StyledBrandRow>
       <StyledHeaderRow>
         <StyledWorkspaceDropdownContainer>
           <MultiWorkspaceDropdownButton />
@@ -78,6 +92,7 @@ export const NavigationDrawerHeader = () => {
         {isExpanded && (
           <StyledRightActions>
             <FrontComponentMediaSessionIndicator />
+            <OruvynCreateRecordButton size="sm" />
             {searchButton}
             <NavigationDrawerCollapseButton
               direction="left"
@@ -89,6 +104,7 @@ export const NavigationDrawerHeader = () => {
       {!isExpanded && !isMobile && (
         <StyledCollapsedSearch>
           <FrontComponentMediaSessionIndicator />
+          <OruvynCreateRecordButton size="md" />
           {searchButton}
         </StyledCollapsedSearch>
       )}
