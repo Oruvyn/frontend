@@ -1,0 +1,17 @@
+{
+  "name": "Oruvyn CRM",
+  "short_name": "Oruvyn",
+  "description": "Every relationship, in motion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F9FC",
+  "theme_color": "#111C31",
+  "icons": [
+    {
+      "src": "/images/oruvyn/symbol.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
